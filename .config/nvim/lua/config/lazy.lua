@@ -32,4 +32,8 @@ require("lazy").setup({
   install = { colorscheme = { "kanagawa" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  dev = {
+	path = vim.fn.stdpath("config") .. "/lua/localplugins",
+	fallback = false,
+  },
 })

@@ -35,3 +35,4 @@ vim.opt.relativenumber = true
 vim.opt.virtualedit = 'block'
 
 require("config.lazy")
+
