@@ -34,5 +34,9 @@ vim.opt.signcolumn = 'yes:1'
 vim.opt.relativenumber = true 
 vim.opt.virtualedit = 'block'
 
+
+vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
+vim.o.showtabline = 2
+
 require("config.lazy")
 
