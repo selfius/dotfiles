@@ -17,26 +17,31 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':lua vim.diagnostic.open_float()<CR>'
 
 
 vim.keymap.set('n', '<leader>m',
-	function()  
-		vim.lsp.buf.code_action(
-			{ filter = function(x) 
-				return x.title and string.find(x.title, 'Import')
-			end,
-			apply = true
-		})
-	end,
-{ noremap = true, silent = true })
+        function()
+                vim.lsp.buf.code_action(
+                        {
+                                filter = function(x)
+                                        return x.title and string.find(x.title, 'Import')
+                                end,
+                                apply = true
+                        })
+        end,
+        { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>a',vim.lsp.buf.code_action, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { noremap = true, silent = true })
 
 
 vim.opt.signcolumn = 'yes:1'
-vim.opt.relativenumber = true 
+vim.opt.relativenumber = true
 vim.opt.virtualedit = 'block'
 
 
 vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 vim.o.showtabline = 2
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.list = true
 
 require("config.lazy")
-
